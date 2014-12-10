@@ -1,0 +1,90 @@
+/* 
+This is the style page for onepage-wonder. In order for this file to work
+properly, we need to follow a specific style. Most generic stuff at the top and
+work your way down to the most specific. If you have a class as the selector,
+make its own rule for it... Don't nest it. If a group of variables are used 
+more than once see if you can choose a different class or see if you can use a 
+mixin to solve that problem.
+*/
+/******************************************************************************
+main stuff
+******************************************************************************/
+body {
+  background: #efefef; }
+
+.radius {
+  border-radius: 15px; }
+
+.round {
+  border-radius: 50%; }
+
+/******************************************************************************
+Headers and Font Variations
+******************************************************************************/
+.sub-title {
+  background: blue;
+  padding-top: 20px;
+  border: black; }
+
+/******************************************************************************
+Featured img / call to action
+******************************************************************************/
+.img-cover {
+  background: url("/img/bikes.jpg") fixed;
+  background-size: cover;
+  height: 500px; }
+
+.cta {
+  margin: 0 auto;
+  padding-top: 50px; }
+  .cta h1 {
+    color: white; }
+  .cta .button {
+    font-size: 40px;
+    background: rgba(68, 68, 68, 0.7);
+    border-color: white;
+    border-width: 5px; }
+  .cta blockquote, .cta cite {
+    padding-top: 50px;
+    color: white; }
+    .cta blockquote cite, .cta cite cite {
+      font-size: 20px; }
+
+.btn-left {
+  margin-right: 50px; }
+
+.quote-cover {
+  background: url("/img/journal.jpg") fixed;
+  background-size: cover;
+  height: 500px; }
+  .quote-cover h1 {
+    background: rgba(51, 51, 51, 0.7);
+    outline: black; }
+
+/******************************************************************************
+Team
+******************************************************************************/
+.team .button {
+  background: white;
+  color: steelblue;
+  width: 150px; }
+  .team .button:hover {
+    background: #555; }
+.team img:hover {
+  transform: rotate(90deg); }
+
+/******************************************************************************
+Promo
+******************************************************************************/
+.promo {
+  background: white; }
+
+/******************************************************************************
+Projects
+******************************************************************************/
+.projects {
+  margin: 0 auto; }
+  .projects ul {
+    margin: 0 auto; }
+    .projects ul a:hover {
+      width: 500px; }
