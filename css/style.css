@@ -22,15 +22,17 @@ body {
 Headers and Font Variations
 ******************************************************************************/
 .sub-title {
-  background: blue;
-  padding-top: 20px;
-  border: black; }
+  background: #999;
+  padding: 20px;
+  border: 2px inset red;
+  width: 300px;
+  margin: 20px auto; }
 
 /******************************************************************************
 Featured img / call to action
 ******************************************************************************/
 .img-cover {
-  background: url("/img/bikes.jpg") fixed;
+  background: url("/img/bikes.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 500px; }
 
@@ -43,7 +45,9 @@ Featured img / call to action
     font-size: 40px;
     background: rgba(68, 68, 68, 0.7);
     border-color: white;
-    border-width: 5px; }
+    border-width: 2px; }
+    .cta .button:hover {
+      background: rgba(68, 68, 68, 0.9); }
   .cta blockquote, .cta cite {
     padding-top: 50px;
     color: white; }
@@ -54,12 +58,20 @@ Featured img / call to action
   margin-right: 50px; }
 
 .quote-cover {
-  background: url("/img/journal.jpg") fixed;
+  background: url("/img/journal.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 500px; }
   .quote-cover h1 {
     background: rgba(51, 51, 51, 0.7);
     outline: black; }
+
+.third {
+  background: url("/img/building.jpg") no-repeat center center fixed;
+  background-size: cover; }
+
+.fourth {
+  background: url("/img/postit.jpg") no-repeat center center fixed;
+  background-size: cover; }
 
 /******************************************************************************
 Team
@@ -71,7 +83,7 @@ Team
   .team .button:hover {
     background: #555; }
 .team img:hover {
-  transform: rotate(90deg); }
+  transform: rotate(45deg); }
 
 /******************************************************************************
 Promo
@@ -82,9 +94,23 @@ Promo
 /******************************************************************************
 Projects
 ******************************************************************************/
-.projects {
+.portfolio {
   margin: 0 auto; }
-  .projects ul {
+  .portfolio ul {
     margin: 0 auto; }
-    .projects ul a:hover {
+    .portfolio ul a:hover {
       width: 500px; }
+  .portfolio img:hover {
+    transform: scale(1.125) rotate(10deg); }
+
+/******************************************************************************
+Forms
+******************************************************************************/
+textarea {
+  height: 150px; }
+
+/******************************************************************************
+Contact
+******************************************************************************/
+.contact ul {
+  list-style-type: none; }

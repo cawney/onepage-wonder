@@ -41,9 +41,11 @@ Headers and Font Variations
 
 
 .sub-title {
-	background: blue;
-	padding-top: 20px;
-	border: black;
+	background: #999;
+	padding: 20px;
+	border: 2px inset red;
+	width: 300px;
+	margin: 20px auto;
 }
 
 
@@ -55,7 +57,7 @@ Featured img / call to action
 
 
 .img-cover {
-	background: url("/img/bikes.jpg") fixed;
+	background: url("/img/bikes.jpg") no-repeat center center fixed;
 	background-size: cover;
 	height: 500px;
 }
@@ -70,7 +72,10 @@ Featured img / call to action
 		font-size: 40px;
 		background: rgba(#444, .7);
 		border-color: white;
-		border-width: 5px;
+		border-width: 2px;
+		&:hover {
+			background: rgba(#444, .9);
+		}
 	}
 	blockquote, cite {
 		padding-top: 50px;
@@ -86,7 +91,7 @@ Featured img / call to action
 }
 
 .quote-cover {
-	background: url("/img/journal.jpg") fixed;
+	background: url("/img/journal.jpg") no-repeat center center fixed;
 	background-size: cover;
 	height: 500px;
 	h1 {
@@ -95,6 +100,15 @@ Featured img / call to action
 	}
 }
 
+.third {
+	background: url("/img/building.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+.fourth {
+	background: url("/img/postit.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
 
 
 
@@ -114,7 +128,7 @@ Team
 		}
 	}
 	img:hover {
-		transform: rotate(90deg);
+		transform: rotate(45deg);
 
 
 	}
@@ -140,7 +154,7 @@ Projects
 
 
 
-.projects {
+.portfolio {
 	margin: 0 auto;
 	ul {
 		margin: 0 auto;
@@ -149,6 +163,35 @@ Projects
 				width: 500px;
 			}
 		}
+	}
+	img:hover {
+		transform: scale(1.125) rotate(10deg);
+	}
+}
+
+
+
+/******************************************************************************
+Forms
+******************************************************************************/
+
+
+
+textarea {
+	height: 150px;
+}
+
+
+
+/******************************************************************************
+Contact
+******************************************************************************/
+
+
+
+.contact {
+	ul {
+		list-style-type: none;
 	}
 }
 
