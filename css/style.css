@@ -18,6 +18,9 @@ body {
 .round {
   border-radius: 50%; }
 
+ul {
+  list-style-type: none; }
+
 /******************************************************************************
 Headers and Font Variations
 ******************************************************************************/
@@ -32,7 +35,7 @@ Headers and Font Variations
 Featured img / call to action
 ******************************************************************************/
 .img-cover {
-  background: url("/img/bikes.jpg") no-repeat center center fixed;
+  background: url("../img/bikes.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 500px; }
 
@@ -58,7 +61,7 @@ Featured img / call to action
   margin-right: 50px; }
 
 .quote-cover {
-  background: url("/img/journal.jpg") no-repeat center center fixed;
+  background: url("../img/journal.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 500px; }
   .quote-cover h1 {
@@ -66,11 +69,11 @@ Featured img / call to action
     outline: black; }
 
 .third {
-  background: url("/img/building.jpg") no-repeat center center fixed;
+  background: url("../img/building.jpg") no-repeat center center fixed;
   background-size: cover; }
 
 .fourth {
-  background: url("/img/postit.jpg") no-repeat center center fixed;
+  background: url("../img/postit.jpg") no-repeat center center fixed;
   background-size: cover; }
 
 /******************************************************************************
@@ -84,18 +87,23 @@ Team
     background: #555; }
 .team img:hover {
   transform: rotate(45deg); }
+.team li > a {
+  max-width: 150px; }
 
 /******************************************************************************
 Promo
 ******************************************************************************/
 .promo {
   background: white; }
+  .promo img {
+    margin-bottom: 20px; }
 
 /******************************************************************************
 Projects
 ******************************************************************************/
 .portfolio {
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-bottom: 50px; }
   .portfolio ul {
     margin: 0 auto; }
     .portfolio ul a:hover {
@@ -110,7 +118,20 @@ textarea {
   height: 150px; }
 
 /******************************************************************************
+Services
+******************************************************************************/
+.services-table {
+  margin-bottom: 40px; }
+
+/******************************************************************************
 Contact
 ******************************************************************************/
 .contact ul {
   list-style-type: none; }
+
+/******************************************************************************
+Profile
+******************************************************************************/
+.skills {
+  border: transparent;
+  background: #fff; }

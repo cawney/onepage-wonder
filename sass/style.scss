@@ -32,6 +32,9 @@ body {
 	border-radius: 50%;
 }
 
+ul {
+	list-style-type: none;
+}
 
 
 /******************************************************************************
@@ -57,7 +60,7 @@ Featured img / call to action
 
 
 .img-cover {
-	background: url("/img/bikes.jpg") no-repeat center center fixed;
+	background: url("../img/bikes.jpg") no-repeat center center fixed;
 	background-size: cover;
 	height: 500px;
 }
@@ -91,7 +94,7 @@ Featured img / call to action
 }
 
 .quote-cover {
-	background: url("/img/journal.jpg") no-repeat center center fixed;
+	background: url("../img/journal.jpg") no-repeat center center fixed;
 	background-size: cover;
 	height: 500px;
 	h1 {
@@ -101,12 +104,12 @@ Featured img / call to action
 }
 
 .third {
-	background: url("/img/building.jpg") no-repeat center center fixed;
+	background: url("../img/building.jpg") no-repeat center center fixed;
 	background-size: cover;
 }
 
 .fourth {
-	background: url("/img/postit.jpg") no-repeat center center fixed;
+	background: url("../img/postit.jpg") no-repeat center center fixed;
 	background-size: cover;
 }
 
@@ -129,8 +132,9 @@ Team
 	}
 	img:hover {
 		transform: rotate(45deg);
-
-
+	}
+	li > a {
+		max-width: 150px;
 	}
 }
 
@@ -144,6 +148,9 @@ Promo
 
 .promo {
 	background: white;
+	img {
+		margin-bottom: 20px;
+	}
 }
 
 
@@ -156,6 +163,7 @@ Projects
 
 .portfolio {
 	margin: 0 auto;
+	padding-bottom: 50px;
 	ul {
 		margin: 0 auto;
 		a {
@@ -184,6 +192,18 @@ textarea {
 
 
 /******************************************************************************
+Services
+******************************************************************************/
+
+
+
+.services-table {
+	margin-bottom: 40px;
+}
+
+
+
+/******************************************************************************
 Contact
 ******************************************************************************/
 
@@ -193,6 +213,19 @@ Contact
 	ul {
 		list-style-type: none;
 	}
+}
+
+
+
+/******************************************************************************
+Profile
+******************************************************************************/
+
+
+
+.skills {
+	border: transparent;
+	background: #fff;
 }
 
 

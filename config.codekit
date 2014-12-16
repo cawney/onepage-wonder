@@ -4253,17 +4253,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/DeathtoStock_Wired6.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1.28036e+06,
-		"inputAbbreviatedPath": "\/img\/DeathtoStock_Wired6.jpg",
-		"outputAbbreviatedPath": "\/img\/DeathtoStock_Wired6.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/journal.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -4271,6 +4260,17 @@
 		"initialSize": 1.11283e+06,
 		"inputAbbreviatedPath": "\/img\/journal.jpg",
 		"outputAbbreviatedPath": "\/img\/journal.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/postit.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 122119,
+		"inputAbbreviatedPath": "\/img\/postit.jpg",
+		"outputAbbreviatedPath": "\/img\/postit.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
