@@ -9,52 +9,37 @@
 
     <title>James Carney | Web Developer</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
-
     <!-- Custom styles for this template -->
+    
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/animate.css/animate.min.css"> 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <!-- Modernizr for older browsers -->
-    <script src="bower_components/foundation/js/vendor/modernizr.js"></script>
+
   </head>
 
-  <body data-spy="scroll" data-target=".navbar">
+  <body>
     
-    <div class="contain-to-grid" data-magellan-expedition="fixed">
-      <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name">
-            <h1><a href="#">Cool Company</a></h1>
-          </li>
-           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-          <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
-        </ul>
-
-        <section class="top-bar-section">
-          <!-- Right Nav Section -->
-          <ul class="right">
-          <li data-magellan-arrival="projects"><a href="#projects">Team</a></li>
-            <li data-magellan-arrival="projects"><a href="#projects">Projects</a></li>
-            <li data-magellan-arrival="services"><a href="#services">Services</a></li> 
-            <li class="has-dropdown">
-              <a href="#">Example Pages</a>
+      <nav class="navbar" data-topbar role="navigation">
+          <ul class="navbar-nav">
+						<li class="title"><a href="#">Cool Company</a></li>
+						<li><a href="#projects">Team</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li> 
+            <li>
+              <a class="has-dropdown" href="#">Example Pages</a>
               <ul class="dropdown">
-                <li data-magellan-arrival="bootstrap"><a href="#bootstrap">Kitchen Sink</a></li>
+                <li><a href="#bootstrap">Kitchen Sink</a></li>
                 <li><a href="#foundations">About</a></li>
                 <li><a href="#wordpress">Contact</a></li>
                 <li class="divider"></li>
-                <li><a href="#swift">Sales Page</a></li>
-              </ul>
-            </li>
+                <li><a href="sales.html">Sales Page</a></li>
+              </ul> <!-- /.dropdown -->
+            </li> <!-- /.has-dropdown -->
             <li class="divider"></li>
-            <li data-magellan-arrival="blog"><a href="#">Blog</a></li>
-          </ul>
-        </section>
+            <li><a href="#">Blog</a></li>
+          </ul> <!-- /.navbar-nav -->
       </nav>
-    </div>
     
     <div class="img-cover">
     	<div class="cta text-center">
@@ -67,30 +52,30 @@
 	<!-- </img.cover> -->
 
     <div class="wrapper">
-    	<div class="team row" id="team">
-    		<div class="large-12 large-centered columns">
+    	<div class="team" id="team">
+    		<div class="full-width">
 	    		<h1 class="sub-title text-center">Our Team</h1>
-                <p class="lead text-center">There is no I in team, but there is an I in WIN!</p>
+					<p class="lead text-center"><em>There is no I in team, but there is an I in WIN!</em></p>
 	    		<h3 class="text-center">Members</h3>
 	    		<hr>
-	    		<ul class="small-block-grid-3 team-member">
-	    			<li>
-		    			<h5>James Carney</h5>
-		    			<img src="http://placehold.it/150x150" alt="Placeholder information"><br>
-		    			<a href="profile.html" class="button radius">View Profile</a>
-					</li>
-					<li>
-		    			<h5>James Carney</h5>
-		    			<img src="http://placehold.it/150x150" alt="Placeholder information"><br>
-		    			<a href="profile.html" class="button radius">View Profile</a>
-					</li>
-					<li>
-		    			<h5>James Carney</h5>
-		    			<img src="http://placehold.it/150x150" alt="Placeholder information"><br>
-		    			<a href="profile.html" class="button radius">View Profile</a>
-	    			</li>
-				</ul>
-    		</div>
+	    		<div class="team-member-group">
+	    			<div class="team-member">
+	    				<h4>James Carney</h4>
+	    				<img src="img/postit.jpg" alt="Profile Pic">
+	    				<a href="profile.html" class="button">More Info</a>
+	    			</div> <!-- /.team-member-->
+	    			<div class="team-member">
+	    				<h4>James Carney</h4>
+	    				<img src="img/postit.jpg" alt="Profile Pic">
+	    				<a href="profile.html" class="button">More Info</a>
+	    			</div> <!-- /.team-member-->
+	    			<div class="team-member">
+	    				<h4>James Carney</h4>
+	    				<img src="img/postit.jpg" alt="Profile Pic">
+	    				<a href="profile.html" class="button">More Info</a>
+	    			</div> <!-- /.team-member-->
+	    		</div>
+    		</div> <!-- /.full-width -->
 
     	</div>
     	<!-- </team> -->

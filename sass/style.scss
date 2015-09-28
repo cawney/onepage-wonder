@@ -10,7 +10,23 @@ mixin to solve that problem.
 
 
 
+@import "bourbon", "neat";
+
+
+$dark: #444;
+
 $background: #efefef;
+
+
+/**************************************
+Break Points
+**************************************/
+
+
+
+$small: 568px;
+$medium: 667px;
+$large: 1104px;
 
 
 
@@ -22,6 +38,11 @@ main stuff
 
 body {
 	background: $background;
+	margin: 0;
+}
+
+.wrapper {
+	@include clearfix;
 }
 
 .radius {
@@ -37,6 +58,35 @@ ul {
 }
 
 
+
+/**************************************
+Text
+**************************************/
+
+
+
+.text-center {
+	text-align: center;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+
+
+/**************************************
+Grid/Column
+**************************************/
+
+
+
+.full-width {
+	@include fill-parent;
+}
+
+
+
 /******************************************************************************
 Headers and Font Variations
 ******************************************************************************/
@@ -44,13 +94,93 @@ Headers and Font Variations
 
 
 .sub-title {
-	background: #999;
+	//background: #999;
 	padding: 20px;
-	border: 2px inset red;
+	//border: 2px inset red;
 	width: 300px;
 	margin: 20px auto;
 }
 
+
+
+/******************************************************************************
+Navigation
+******************************************************************************/
+
+
+
+.navbar {
+	@include fill-parent;
+	background: $dark;
+	position: fixed;
+	top: 0;
+	height: 75px;
+	
+	box-shadow: 3px 3px 6px darken($dark, 50%);
+	
+	.navbar-nav {
+		
+		//Mobile Stuff
+		@include media($small) {
+			//Mobile goes here
+		}
+		
+		
+		
+		
+		//Everything Else
+		@include fill-parent;
+		margin: auto;
+		padding-top: 23.1px;
+		
+			.title {
+				font-size: 1.5em;
+				margin-left: 0;
+				
+			}
+
+			li {
+				display: inline;
+
+				&:first-of-type {
+					text-align: left; //Selects the first li (title), and moves to left
+					margin-left: 0;
+				}
+				a {
+					text-decoration: none;
+					text-align: right;
+					padding-left: 5px;
+					padding-right: 5px;
+					margin: 0 5;
+					color: white;
+					
+					&:hover {
+						color: darken(white, 15%);
+					}
+				}
+					.dropdown {
+				display: none;
+
+			}//dropdown	
+				.has-dropdown {
+					color: pink;
+					&:hover {
+						background: black;
+						.dropdown {
+							display: inline;
+						}
+					}
+				}
+				
+			
+			} //li
+
+			
+
+
+	} //.navbar-nav
+
+}
 
 
 /******************************************************************************
@@ -60,6 +190,7 @@ Featured img / call to action
 
 
 .img-cover {
+	padding-top: 92.63px;
 	background: url("../img/bikes.jpg") no-repeat center center fixed;
 	background-size: cover;
 	height: 500px;
@@ -87,10 +218,6 @@ Featured img / call to action
 			font-size: 20px;
 		}
 	}
-}
-
-.btn-left {
-	margin-right: 50px;
 }
 
 .quote-cover {
@@ -122,6 +249,7 @@ Team
 
 
 .team {
+	@include outer-container(100%);
 	.button {
 		background: white;
 		color: steelblue;
@@ -130,11 +258,22 @@ Team
 			background: #555;
 		}
 	}
+	img {
+		border-radius: 50%;
+	}
 	img:hover {
 		transform: rotate(45deg);
 	}
 	li > a {
 		max-width: 150px;
+	}
+	
+	.team-member {
+		@include span-columns(4);
+		
+		img {
+			max-width: 150px;
+		}
 	}
 }
 
