@@ -14,8 +14,10 @@ mixin to solve that problem.
 
 
 $dark: #444;
+$white: #efefef;
 
-$background: #efefef;
+$background: $white;
+$btn-bg: steelblue;
 
 
 /**************************************
@@ -45,6 +47,15 @@ body {
 	@include clearfix;
 }
 
+.wrapper-content {
+	text-align: justify;
+	width: 95%;
+	margin: 0 auto;
+	@include media($large) {
+		text-align: left;
+	}
+}
+
 .radius {
 	border-radius: 15px;
 }
@@ -71,6 +82,14 @@ Text
 
 h5 {
 	font-size: 1em;
+}
+
+h3, p {
+  font-family: sans-serif;
+}
+
+.lead {
+  font-size: 1.125em;
 }
 
 
@@ -109,78 +128,340 @@ Navigation
 
 
 
-.navbar {
-	@include fill-parent;
-	background: $dark;
-	position: fixed;
-	top: 0;
-	height: 75px;
-	
-	box-shadow: 3px 3px 6px darken($dark, 50%);
-	
-	.navbar-nav {
-		
-		//Mobile Stuff
-		@include media($small) {
-			//Mobile goes here
-		}
-		
-		
-		
-		
-		//Everything Else
-		@include fill-parent;
-		margin: auto;
-		padding-top: 23.1px;
-		
-			.title {
-				font-size: 1.5em;
-				margin-left: 0;
-				
-			}
+header.navigation {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $large-screen: em(860) !default;
+  $navigation-padding: 1em;
+  $navigation-background: $dark-gray;
+  $navigation-color: transparentize(white, 0.3);
+  $navigation-color-hover: white;
+  $navigation-height: 60px;
+  $navigation-nav-button-background: $action-color;
+  $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
+  $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
+  $navigation-search-background: lighten($navigation-background, 5);
+  $navigation-search-border: 1px solid darken($navigation-background, 5);
+  $navigation-active-link-color: transparentize(white, 0.5);
+  $navigation-submenu-padding: 1em;
+  $navigation-submenu-width: 12em;
+  $horizontal-bar-mode: $large-screen;
 
-			li {
-				display: inline;
+  background-color: $navigation-background;
+  border-bottom: 2px solid darken($navigation-background, 10); // Replace with a box-shadow?
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
 
-				&:first-of-type {
-					text-align: left; //Selects the first li (title), and moves to left
-					margin-left: 0;
-				}
-				a {
-					text-decoration: none;
-					text-align: right;
-					padding-left: 5px;
-					padding-right: 5px;
-					margin: 0 5;
-					color: white;
-					
-					&:hover {
-						color: darken(white, 15%);
-					}
-				}
-					.dropdown {
-				display: none;
+  .navigation-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
+  }
 
-			}//dropdown	
-				.has-dropdown {
-					color: pink;
-					&:hover {
-						background: black;
-						.dropdown {
-							display: inline;
-						}
-					}
-				}
-				
-			
-			} //li
+  .logo {
+    float: left;
+    max-height: $navigation-height;
+    padding-left: $navigation-padding;
+    padding-right: 2em;
 
-			
+    img {
+      max-height: $navigation-height;
+      padding: 0.8em 0;
+    }
+  }
 
+  // Mobile view
 
-	} //.navbar-nav
+  .navigation-menu-button {
+    color: $navigation-color;
+    display: block;
+    float: right;
+    line-height: $navigation-height;
+    margin: 0;
+    padding-right: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
 
+    @include media ($horizontal-bar-mode) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  // Nav menu
+
+  nav {
+    float: none;
+    min-height: $navigation-height;
+    z-index: 9999999;
+
+    @include media ($horizontal-bar-mode) {
+      float: left;
+    }
+  }
+
+  ul.navigation-menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 9999;
+
+    &.show {
+      display: block;
+    }
+
+    @include media ($horizontal-bar-mode) {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // The nav items
+
+  ul li.nav-link {
+    background: $navigation-background;
+    display: block;
+    line-height: $navigation-height;
+    overflow: hidden;
+    padding-right: 0.8em;
+    text-align: right;
+    width: 100%;
+    z-index: 9999;
+
+    @include media ($horizontal-bar-mode) {
+      background: transparent;
+      display: inline;
+      line-height: $navigation-height;
+      text-decoration: none;
+      width: auto;
+    }
+
+    a {
+      color: $navigation-color;
+      display: inline-block;
+      text-decoration: none;
+
+      @include media ($horizontal-bar-mode) {
+        padding-right: 1em;
+      }
+
+      &:focus,
+      &:hover {
+        color: $navigation-color-hover;
+      }
+    }
+  }
+
+  .active-nav-item a {
+    border-bottom: 1px solid $navigation-active-link-color;
+    padding-bottom: 3px;
+  }
+
+  // Sub menus
+
+  li.more.nav-link {
+    padding-right: 0;
+
+    @include media($horizontal-bar-mode) {
+      padding-right: $navigation-submenu-padding;
+    }
+
+    > ul > li:first-child a  {
+      padding-top: 1em;
+    }
+
+    a {
+      margin-right: $navigation-submenu-padding;
+    }
+
+    > a {
+      padding-right: 0.6em;
+    }
+
+    > a:after {
+      @include position(absolute, auto -0.4em auto auto);
+      content: '\25BE';
+      color: $navigation-color;
+    }
+  }
+
+  li.more {
+    overflow: visible;
+    padding-right: 0;
+
+    a {
+      padding-right: 0.8em;
+    }
+
+    > a {
+      padding-right: 1.6em;
+      position: relative;
+
+      @include media($horizontal-bar-mode) {
+        margin-right: $navigation-submenu-padding;
+      }
+
+      &:after {
+        content: '›';
+        font-size: 1.2em;
+        position: absolute;
+        right: $navigation-submenu-padding / 2;
+      }
+    }
+
+    &:focus > .submenu,
+    &:hover > .submenu {
+      display: block;
+    }
+
+    @include media($horizontal-bar-mode) {
+      padding-right: 0.8em;
+      position: relative;
+    }
+  }
+
+  ul.submenu {
+    display: none;
+    padding-left: 0;
+
+    @include media($horizontal-bar-mode) {
+      left: -$navigation-submenu-padding;
+      position: absolute;
+      top: 1.5em;
+    }
+
+    .submenu {
+      @include media($horizontal-bar-mode) {
+        left: $navigation-submenu-width - 0.2em;
+        top: 0;
+      }
+    }
+
+    li {
+      display: block;
+      padding-right: 0;
+
+      @include media($horizontal-bar-mode) {
+        line-height: $navigation-height / 1.3;
+
+        &:first-child > a {
+          border-top-left-radius: $base-border-radius;
+          border-top-right-radius: $base-border-radius;
+        }
+
+        &:last-child > a {
+          border-bottom-left-radius: $base-border-radius;
+          border-bottom-right-radius: $base-border-radius;
+          padding-bottom: 0.7em;
+        }
+      }
+
+      a {
+        background-color: darken($navigation-background, 3%);
+        display: inline-block;
+        text-align: right;
+        width: 100%;
+
+        @include media($horizontal-bar-mode) {
+          background-color: $navigation-background;
+          padding-left: $navigation-submenu-padding;
+          text-align: left;
+          width: $navigation-submenu-width;
+        }
+      }
+    }
+  }
+
+  // Elements on the far right
+
+  .navigation-tools {
+    background: #505050;
+    clear: both;
+    display: block;
+    height: $navigation-height;
+
+    @include media($horizontal-bar-mode) {
+      background: transparent;
+      clear: none;
+      float: right;
+    }
+  }
+
+  // Search bar
+
+  .search-bar {
+    $search-bar-border-color: $base-border-color;
+    $search-bar-border: 1px solid $search-bar-border-color;
+    $search-bar-background: lighten($search-bar-border-color, 10%);
+
+    float: left;
+    padding: 0.85em 0.85em 0.7em 0.6em;
+    width: 60%;
+
+    form {
+      position: relative;
+
+      input[type=search] {
+        box-sizing: border-box;
+        background: $navigation-search-background;
+        border-radius: $base-border-radius * 2;
+        border: $navigation-search-border;
+        color: $navigation-color;
+        font-size: 0.9em;
+        font-style: italic;
+        margin: 0;
+        padding: 0.5em 0.8em;
+        width: 100%;
+
+        @include media($horizontal-bar-mode) {
+          width: 100%;
+        }
+      }
+
+      button[type=submit] {
+        background: $navigation-search-background;
+        border: none;
+        bottom: 0.3em;
+        left: auto;
+        outline: none;
+        padding: 0 9px;
+        position: absolute;
+        right: 0.3em;
+        top: 0.3em;
+
+        img {
+          height: 12px;
+          opacity: 0.7;
+          padding: 1px;
+        }
+      }
+    }
+
+    @include media($horizontal-bar-mode) {
+      display: inline-block;
+      position: relative;
+      width: 16em;
+
+      input {
+        box-sizing: border-box;
+        display: block;
+      }
+    }
+  }
 }
+
 
 
 /******************************************************************************
@@ -190,7 +471,7 @@ Featured img / call to action
 
 
 .img-cover {
-	padding-top: 92.63px;
+	padding-top: 60px;
 	background: url("../img/bikes.jpg") no-repeat center center fixed;
 	background-size: cover;
 	height: 500px;
@@ -200,17 +481,34 @@ Featured img / call to action
 	margin: 0 auto;
 	padding-top: 50px;
 	h1 {
-		color: white;
+		color: $white;
+    font-weight: 100;
 	}
-	.button {
-		font-size: 40px;
-		background: rgba(#444, .7);
-		border-color: white;
-		border-width: 2px;
-		&:hover {
-			background: rgba(#444, .9);
-		}
-	}
+
+  .cta-btn {
+    @include outer-container(95%);
+    margin-top: 50px;
+
+    .btn {
+      text-decoration: none;
+      border: 1px solid white;
+      font-size: 2em;
+
+      color: $white;
+      background: rgba($dark, .5);
+
+      padding: 10px;
+      margin: 0 5%;
+
+      &:hover {
+
+        $background-cta: rgba($dark, .7);
+        background: darken($background-cta, 15%);
+      }
+    }
+
+  }
+	
 	blockquote, cite {
 		padding-top: 50px;
 		color: white;
@@ -241,6 +539,47 @@ Featured img / call to action
 }
 
 
+/******************************************************************************
+Parrallax Scrolling Image
+******************************************************************************/
+
+
+
+$parallax-window-height: 30em;
+$parallax-background-height: $parallax-window-height * 2;
+
+.parallax-window {
+  max-height: $parallax-window-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-static-content {
+  color: #9A9A8A;
+  padding: 8em 0;
+
+  position: relative;
+  z-index: 9;
+}
+
+.parallax-background {
+  background: url("../img/building.jpg") no-repeat;
+  background-position:top center;
+  background-size: cover;
+  background-color: $background;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-window-height / 3;
+  width: 100%;
+}
+
+// Based on http://codepen.io/skeurentjes/
+
+
+
 
 /******************************************************************************
 Team
@@ -269,7 +608,14 @@ Team
 	}
 	
 	.team-member {
-		@include span-columns(4);
+		
+		@include span-columns(12);
+		text-align: center;
+		
+		@include media($medium) {
+			@include span-columns(4);	
+		}
+		
 		
 		img {
 			max-width: 150px;
@@ -286,7 +632,22 @@ Promo
 
 
 .promo {
-	background: white;
+	//background: white;
+  @include outer-container(100%);
+  .promo-table {
+
+    border: 1px solid $dark;
+
+    margin-bottom: 50px;
+
+    p.lead {
+      text-align: justify;
+    }
+    @include span-columns(12);
+    @include media($medium) {
+      @include span-columns(4);
+    }
+  }
 	img {
 		margin-bottom: 20px;
 	}
@@ -301,19 +662,42 @@ Projects
 
 
 .portfolio {
-	margin: 0 auto;
-	padding-bottom: 50px;
-	ul {
-		margin: 0 auto;
-		a {
-			&:hover {
-				width: 500px;
-			}
-		}
-	}
-	img:hover {
-		transform: scale(1.125) rotate(10deg);
-	}
+	@include outer-container(100%);
+	
+  .photo-flex-parent {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+    list-style: none;
+    
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .photo-flex-child {
+    background: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+
+    &:hover {
+      transform: 4;
+    }
+  }
+
 }
 
 
@@ -336,8 +720,84 @@ Services
 
 
 
-.services-table {
+.service-table {
 	margin-bottom: 40px;
+  @include outer-container(100%);
+
+  .pricing-table {
+    
+    text-align: center;
+    
+
+    
+
+    margin-bottom: 15px;
+
+
+    .title-area {
+      margin: 0;
+      background: rgb(19, 19, 19);
+      color: $white;
+      h3 {
+        font-weight: 100;
+        font-size: 2em;
+        margin: 0;
+        padding: 10px;
+      }
+      
+
+      .price {
+        font-style: italic;
+        font-size: 1.5em;
+        font-weight: 100;
+        margin-bottom: 0;
+      }
+    }
+
+		.pricing-info {
+
+			$pricing-bg: lighten($dark, 35%);
+			$pricing-line: 1px solid $dark;
+
+			background: $pricing-bg;
+			margin-top: 0;
+
+			p.lead {
+	      text-align: justify;
+	      padding: 5px;
+	      font-size: 1em;
+	      margin-top: 0;
+	      padding-top: 1em;
+	      border-bottom: $pricing-line;
+	    }
+	    ul {
+      margin: 0;
+      padding: 0;
+      margin-top: 5px;
+      background: white;
+
+      li {
+        color: black;
+        border-bottom: $pricing-line;
+        height: 1.5em;
+        vertical-align: middle;
+        background: $pricing-bg;
+        line-height: 1.5em;
+
+      }
+
+      
+    }
+
+		}
+        
+    @include span-columns(12);
+    
+    @include media($large) {
+      @include span-columns(4);
+    }
+    
+  }
 }
 
 
@@ -349,9 +809,68 @@ Contact
 
 
 .contact {
-	ul {
-		list-style-type: none;
+	
+	@include outer-container(100%);
+	.contact-form {
+		
+		@include span-columns(12);
+		
+		form {
+			background: black;
+			
+			input {
+				@include span-columns(12);
+				margin-bottom: 10px;
+				height: 2em;
+			}
+			
+			textarea {
+				@include span-columns(12);
+			}
+			
+			a {
+				@include span-columns(12);
+				text-decoration: none;
+				padding-top: 7px;
+				padding-bottom: 7px;
+				margin-top: 5px;
+				text-align: center;
+				background: $btn-bg;
+				border-radius: 5px;
+				color: white;
+				
+				&:hover {
+					background: darken($btn-bg, 15%);
+				}
+			}
+		}
+		
+		
+		
+		@include media($medium) {
+			@include span-columns(8);
+		} //medium devices go up to 8 columsn
 	}
+	.contact-list {
+		
+		@include span-columns(12);
+		
+		.vcard {
+			background: blue;
+			line-height: 1em;
+			font-size: .95em;
+		}
+		
+		hr {
+			//border-bottom: 1px red solid;
+			color: rgba( $dark, .7);
+		}
+		
+		@include media ($medium) {
+			@include span-columns(4);	
+		}
+		
+	} //contact-lsit
 }
 
 
@@ -368,3 +887,41 @@ Profile
 }
 
 
+
+/******************************************************************************
+Footer
+******************************************************************************/
+
+
+
+.footer {
+	@include outer-container(100%);
+	text-align: center;
+	
+	.footer-copy {
+		@include span-columns(12);
+		
+		@include media($large) {
+			@include span-columns(3);
+		}
+	}
+	
+	.footer-list {
+		@include span-columns(6);
+		
+		@include media($large) {
+			@include span-columns(3);
+		}
+	}
+	
+	
+	.bottom {
+		color: rgba($dark, .7);
+		font-size: .95em;
+		p {
+			font-size: .95em;
+			//background: blue;
+		}
+	}
+	
+} //footer

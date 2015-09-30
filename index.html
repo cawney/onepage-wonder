@@ -11,7 +11,7 @@
 
     <!-- Custom styles for this template -->
     
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="bower_components/animate.css/animate.min.css"> 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -20,39 +20,64 @@
 
   <body>
     
-      <nav class="navbar" data-topbar role="navigation">
-          <ul class="navbar-nav">
-						<li class="title"><a href="#">Cool Company</a></li>
-						<li><a href="#projects">Team</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#services">Services</a></li> 
-            <li>
-              <a class="has-dropdown" href="#">Example Pages</a>
-              <ul class="dropdown">
-                <li><a href="#bootstrap">Kitchen Sink</a></li>
-                <li><a href="#foundations">About</a></li>
-                <li><a href="#wordpress">Contact</a></li>
-                <li class="divider"></li>
-                <li><a href="sales.html">Sales Page</a></li>
-              </ul> <!-- /.dropdown -->
-            </li> <!-- /.has-dropdown -->
-            <li class="divider"></li>
-            <li><a href="#">Blog</a></li>
-          </ul> <!-- /.navbar-nav -->
-      </nav>
-    
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="javascript:void(0)" class="logo">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image">
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu"><i class="fa fa-bars fa-2x"></i></a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link"><a href="javascript:void(0)">Products</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
+        <li class="nav-link more"><a href="javascript:void(0)">More</a>
+          <ul class="submenu">
+            <li><a href="javascript:void(0)">Submenu Item</a></li>
+            <li><a href="javascript:void(0)">Another Item</a></li>
+            <li class="more"><a href="javascript:void(0)">Item with submenu</a>
+              <ul class="submenu">
+                <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
+                <li><a href="javascript:void(0)">Another Item</a></li>
+              </ul>
+            </li>
+            <li class="more"><a href="javascript:void(0)">Another submenu</a>
+              <ul class="submenu">
+                <li><a href="javascript:void(0)">Sub-submenu</a></li>
+                <li><a href="javascript:void(0)">An Item</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul> <!-- /.navigation-menu /.show -->
+    </nav>
+    <div class="navigation-tools">
+      <div class="search-bar">
+        <form role="search">
+          <input type="search" placeholder="Enter Search" />
+          <button type="submit">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
+          </button>
+        </form>
+      </div>
+    </div> <!-- /.navigation-tools -->
+  </div> <!-- /.navigation-wrapper -->
+</header>
+
     <div class="img-cover">
     	<div class="cta text-center">
     		<h1>Cool Company</h1>
     		<h1 class="subheading"><em>Being cool since 1991</em></h1>
-        	<a href="#" class="button radius btn-left">Buy Me.</a>
-        	<a href="#" class="button radius btn-right">No, Me!</a>
-    	</div>
+            <div class="cta-btn">
+            	<a href="#" class="btn">Buy Me.</a>
+            	<a href="#" class="btn">No, Me!</a>
+            </div> <!-- /.cta-btn -->
+    	</div> <!-- /.cta -->
     </div>
 	<!-- </img.cover> -->
 
     <div class="wrapper">
-    	<div class="team" id="team">
+    	<div class="team wrapper-content" id="team">
     		<div class="full-width">
 	    		<h1 class="sub-title text-center">Our Team</h1>
 					<p class="lead text-center"><em>There is no I in team, but there is an I in WIN!</em></p>
@@ -61,121 +86,104 @@
 	    		<div class="team-member-group">
 	    			<div class="team-member">
 	    				<h4>James Carney</h4>
-	    				<img src="img/postit.jpg" alt="Profile Pic">
+	    				<img src="img/postit.jpg" alt="Profile Pic"><br>
 	    				<a href="profile.html" class="button">More Info</a>
 	    			</div> <!-- /.team-member-->
 	    			<div class="team-member">
 	    				<h4>James Carney</h4>
-	    				<img src="img/postit.jpg" alt="Profile Pic">
+	    				<img src="img/postit.jpg" alt="Profile Pic"><br>
 	    				<a href="profile.html" class="button">More Info</a>
 	    			</div> <!-- /.team-member-->
 	    			<div class="team-member">
 	    				<h4>James Carney</h4>
-	    				<img src="img/postit.jpg" alt="Profile Pic">
+	    				<img src="img/postit.jpg" alt="Profile Pic"><br>
 	    				<a href="profile.html" class="button">More Info</a>
 	    			</div> <!-- /.team-member-->
 	    		</div>
     		</div> <!-- /.full-width -->
 
-    	</div>
-    	<!-- </team> -->
+    	</div>	<!-- </team> -->
 
-    	<div class="promo">
+    	<div class="promo wrapper-content">
 	    	<div class="row">
 	    		<h3 class="text-center">Why we are so cool...</h3>
 	    		<hr>
-	    		<div class="large-4 columns">
+	    		<div class="promo-table">
 		    		<h3 class="text-center">Build Rockets</h3>
 					<p class="text-center"><i class="fa fa-rocket fa-5x"></i></p>
-					<p class="lead text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum voluptates, sequi repellendus aspernatur, dolorem laborum voluptatibus laudantium ipsa necessitatibus expedita libero molestias nulla consequuntur odit voluptate, impedit itaque ducimus veniam!</p>
+					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum voluptates, sequi repellendus aspernatur, dolorem laborum voluptatibus laudantium ipsa necessitatibus expedita libero molestias nulla consequuntur odit voluptate, impedit itaque ducimus veniam!</p>
 				</div>
-				<div class="large-4 columns">
+				<div class="promo-table">
 		    		<h3 class="text-center">Make Bikes</h3>
 					<p class="text-center"><i class="fa fa-bicycle fa-5x"></i></p>
-					<p class="lead text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis impedit nostrum dolor blanditiis, quo eaque libero? Eum cumque saepe perferendis ut voluptatibus omnis aspernatur rerum, doloremque, debitis fugiat, quas modi.</p>
+					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis impedit nostrum dolor blanditiis, quo eaque libero? Eum cumque saepe perferendis ut voluptatibus omnis aspernatur rerum, doloremque, debitis fugiat, quas modi.</p>
 				</div>
-				<div class="large-4 columns">
+				<div class="promo-table">
 		    		<h3 class="text-center">Cutlery</h3>
 					<p class="text-center"><i class="fa fa-cutlery fa-5x"></i></p>
-					<p class="lead text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis hic enim sint, labore aut eius non eligendi dolorum nisi, explicabo quos, nam. Fugiat, maiores ipsam earum eum officia expedita delectus.</p>
+					<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis hic enim sint, labore aut eius non eligendi dolorum nisi, explicabo quos, nam. Fugiat, maiores ipsam earum eum officia expedita delectus.</p>
 				</div>
 	    	</div>
-    	</div>
-    	<!-- </promo> -->
+    	</div>	<!-- </promo> -->
         <div class="img-cover quote-cover">
             <div class="cta text-center">
                 <h1><blockquote>&ldquo; We are what we repeatidly do, therefore, excellence is not an act, but a habit. &rdquo;<cite>Someone Cool</cite></blockquote></h1>
             </div>
-        </div>
-        <!-- </img-cover> -->
+        </div> <!-- </img-cover> -->
 
-        <div class="portfolio" id="portfolio">
-            <div class="row">
-                <h1 class="text-center">Porfolio</h1>
-                <blockquote class="text-center lead">Only through curiosity can we discover opportunities, and only through gambling can we take advantage of them.</blockquote>
-                <ul class="large-block-grid-6 medium-block-grid-4 small-block-grid-3">
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                    <li><a href="#"><img src="http://placehold.it/200x200" alt=""></a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- </portfolio> -->
+        <div class="portfolio wrapper-content" id="portfolio">
+					<h1 class="text-center">Porfolio</h1>
+					<blockquote class="text-center lead">Only through curiosity can we discover opportunities, and only through gambling can we take advantage of them.</blockquote>
+					<ul class="photo-flex-parent">
+							<li class="photo-flex-child animated">1</li>
+                            <li class="photo-flex-child animated">2</li>
+                            <li class="photo-flex-child animated">3</li>
+                            <li class="photo-flex-child animated">4</li>
+                            <li class="photo-flex-child animated">5</li>
+					</ul>
+        </div> <!-- </portfolio> -->
 
         <div class="img-cover quote-cover third">
             <div class="cta text-center">
                 <h1><blockquote><i class="fa fa-quote-left"></i> The quality of our expectations determines the quality of our actions. <i class="fa fa-quote-right"></i><cite>Someone Cool</cite></blockquote></h1>
             </div>
-        </div>
-        <!-- </img-cover> -->
+        </div> <!-- </img-cover> -->
 
-        <div class="services" id="services">
-            <div class="row clearfix service-table">
-                <h1 class="text-center">Our Services</h1>
-                <p class="lead text-center">Do what you can, with what you have, where you are.</p>
-                <hr>
-
-                <div class="medium-4 columns">
-                    <ul class="pricing-table">
-                        <li class="title">Swag <br><br> <i class="fa fa-fire fa-5x"></i></li>
-                        <li class="price">$99.99</li>
-                        <li class="description">An awesome description</li>
-                        <li class="bullet-item"><i class="fa fa-check"> Some Stuff</i></li>
-                        <li class="bullet-item"><i class="fa fa-check"> Some More Stuff</i></li>
-                        <li class="bullet-item"><i class="fa fa-check"> One More Thing</i></li>
-                    </ul>
-                </div>
-                <div class="medium-4 columns">
-                    <ul class="pricing-table">
-                        <li class="title">Swag <br><br> <i class="fa fa-leaf fa-5x"></i></li>
-                        <li class="price">$99.99</li>
-                        <li class="description">An awesome description</li>
-                        <li class="bullet-item"><i class="fa fa-check"> Some Stuff</i></li>
-                        <li class="bullet-item"><i class="fa fa-check"> Some More Stuff</i></li>
-                        <li class="bullet-item"><i class="fa fa-check"> One More Thing</i></li>
-                    </ul>
-                </div>
-                <div class="medium-4 columns">
-                    <ul class="pricing-table">
-                        <li class="title">Swag <br><br> <i class="fa fa-space-shuttle fa-5x"></i></li>
-                        <li class="price">$99.99</li>
-                        <li class="description">An awesome description</li>
-                        <li class="bullet-item"><i class="fa fa-check"> Some Stuff</i></li>
-                        <li class="bullet-item"><i class="fa fa-check"> Some More Stuff</i></li>
-                        <li class="bullet-item"><i class="fa fa-check"> One More Thing</i></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- /service table -->
+        <div class="services wrapper-content" id="services">
+            <div class="service-table">
+                <h1>Services</h1>
+                <p class="lead">Do what you can, with what you have and where you are.</p>
+                <div class="pricing-table">
+                    <div class="title-area">
+                        <h3 class="pricing-title">Cutlery</h3>
+                        <i class="fa fa-cutlery fa-3x"></i>
+                        <p class="price">$99.99</p>
+                    </div> <!-- /.title-area -->
+                    <div class="pricing-info">
+                        <p class="lead">You read that correctly. We are the worlds largest distributor and buyer of high quality cutlery. And I might say, it is a very modest price... Considering!</p>
+                        <ul class="pricing-list">
+                            <li>Stuff</li>
+                            <li>Stuff</li>
+                            <li>Stuff</li>
+                            <li>Stuff</li>
+                            <li>Stuff</li>
+                            <li>Stuff</li>
+                        </ul>
+                    </div> <!-- /.pricing-info -->
+                </div> <!-- /.pricing-table -->
+                <div class="pricing-table">
+                    <h3 class="pricing-title">Cutlery</h3>
+                    <i class="fa fa-black-tie fa-3x"></i>
+                    <p class="price">$199.99</p>
+                    <p class="lead">You are correct... This is a step up from the entry level. This one is obviously the one you want. You get a lot more services for a little more price.</p>
+                </div> <!-- /.pricing-table -->
+                <div class="pricing-table">
+                    <h3 class="pricing-title">Cutlery</h3>
+                    <i class="fa fa-balance-scale fa-3x"></i>
+                    <p class="price">$599.99</p>
+                    <p class="lead">This is real life. With this amazing service, you'll be able to live a more balanced life. Imagine what you could accomplish if you had that extra 2 hours a day!</p>
+                </div> <!-- /.pricing-table -->
+            </div> <!-- /.service-table -->
             <div class="promo">
                 <div class="row service-info">
                     <div class='small-12 columns'>
@@ -206,38 +214,34 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- </services> -->
+        </div> <!-- </services> -->
 
         <div class="img-cover quote-cover fourth">
             <div class="cta text-center">
                 <h1><blockquote><i class="fa fa-quote-left"></i> Failure is the opportunity to begin again, more intelligently. <i class="fa fa-quote-right"></i><cite>Someone Cool</cite></blockquote></h1>
             </div>
-        </div>
-        <!-- </img-cover> -->
+        </div> <!-- </img-cover> -->
+        <div id="js-parallax-window" class="parallax-window">
+					<div class="parallax-static-content">
+						<div class="cta text-center">
+								<h1><blockquote><i class="fa fa-quote-left"></i> Failure is the opportunity to begin again, more intelligently. <i class="fa fa-quote-right"></i><cite>Someone Cool</cite></blockquote></h1>
+						</div> <!-- /.cta -->
+					</div> <!-- /.parallax-static-content -->
+					<div id="js-parallax-background" class="parallax-background"></div>
+				</div> <!-- /parallax-window -->
 
-        <div class="contact">
-            <div class="row">
-                <div class="large-8 columns">
+
+        <div class="contact wrapper-content">
+                <div class="contact-form">
                     <h1>Get in touch</h1>
                     <form> 
-                      <div class="row">
-                        <div class="large-6 columns">                      
-                            <input type="text" placeholder="Name" />                    
-                        </div>
-                        <div class="large-6 columns">
-                            <input type="email" placeholder="Email" />
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="large-12 columns">
-                            <textarea placeholder="Message..."></textarea>
-                        </div>
-                      </div>
+											<input type="text" placeholder="Name" />                    
+											<input type="email" placeholder="Email" />  
+											<textarea placeholder="Message..."></textarea>
                       <a href="#" class="button expand success">Submit</a>
                     </form>
-                </div>
-                <div class="large-4 columns">
+                </div> <!-- /.contact-form -->
+                <div class="contact-list">
                     <h1>Other</h1>
                     <ul class="social">
                         <li>Phone</li>
@@ -253,34 +257,30 @@
                             <li class="street-address">123 Colonial Ave.</li>
                             <li class="locality">Caprica City</li>
                             <li><span class="state">Caprica</span>, <span class="zip">12345</span></li>
-                        </ul>
-                    </ul>
-                </div>
+                        </ul> <!-- /.vcard -->
+                    </ul> <!-- /.social -->
+                </div> <!-- /.contact-list -->
 
-            </div>
-        </div>
-        <!-- </contact> -->
-
-    </div>
-    <!-- </wrapper> -->
+        </div> <!-- </contact> -->
+    </div> <!-- </wrapper> -->
 
     
 
     
 
     
-    <footer class="footer">
+    <footer class="footer wrapper-content">
 	    <hr>
-      <div class="row full-width">
-        <div class="small-12 medium-3 large-4 columns">
+      
+        <div class="footer-copy">
           <p class="text-center"><i class="fa fa-line-chart fa-5x text-center"></i></p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum maiores alias ea sunt facilis impedit fuga dignissimos illo quaerat iure in nobis id quos, eaque nostrum! Unde, voluptates suscipit repudiandae!</p>
         </div>
-        <div class="small-12 medium-3 large-4 columns">
+        <div class="footer-copy">
           <p class="text-center"><i class="fa fa-html5 fa-5x"></i></p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit impedit consequuntur at! Amet sed itaque nostrum, distinctio eveniet odio, id ipsam fuga quam minima cumque nobis veniam voluptates deserunt!</p>
         </div>
-        <div class="small-6 medium-3 large-2 columns">
+        <div class="small-6 medium-3 large-2 footer-list">
           <h4>Work With Us</h4>
           <ul class="footer-links">
             <li><a href="#">What We Do</a></li>
@@ -290,7 +290,7 @@
             <li><a href="#">FAQ's</a></li>
           <ul>
         </div>
-        <div class="small-6 medium-3 large-2 columns">
+        <div class="small-6 medium-3 large-2 footer-list">
             <h4>Follow Us</h4>
             <ul class="footer-links">
                 <li><a href="#" target="_blank">GitHub</a></li>
@@ -300,7 +300,7 @@
                 <li><a href="#">Dribbble</a></li>
             <ul>
         </div>
-      </div>
+      
       <div class="bottom">
         <p class="text-center">&copy; 2014 | Cool Company</p>
       </div>
@@ -311,10 +311,6 @@
     <script src="bower_components/foundation/js/vendor/jquery.js"></script>
     <script src="bower_components/foundation/js/vendor/fastclick.js"></script>
 
-    <!-- Core JS for Foundation -->
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
+    <script src="js/min/awesome-min.js"></script>
   </body>
 </html>

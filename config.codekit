@@ -4364,7 +4364,7 @@
 		"outputAbbreviatedPath": "\/img\/bikes.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/building.jpg": {
 		"fileType": 16384,
@@ -4375,7 +4375,7 @@
 		"outputAbbreviatedPath": "\/img\/building.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/journal.jpg": {
 		"fileType": 16384,
@@ -4386,7 +4386,7 @@
 		"outputAbbreviatedPath": "\/img\/journal.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/postit.jpg": {
 		"fileType": 16384,
@@ -4397,7 +4397,7 @@
 		"outputAbbreviatedPath": "\/img\/postit.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/index.html": {
 		"fileType": 8192,
