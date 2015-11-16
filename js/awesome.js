@@ -70,5 +70,10 @@ $('.photo-flex-child').hover(function(){
   return $(this).toggleClass("pulse");
 });
 
+$('.expand').hover(function(){
+	$("span"). 
+	$("span").addClass("slideInLeft");
+});
+
 
 

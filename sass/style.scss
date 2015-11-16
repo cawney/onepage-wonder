@@ -46,12 +46,14 @@ body {
 
 .wrapper {
 	//@include clearfix;
+
 }
 
 .wrapper-content {
 	text-align: justify;
 	width: 95%;
 	margin: 0 auto;
+
 	@include media($large) {
 		text-align: left;
 	}
@@ -501,6 +503,17 @@ Featured img / call to action
       @include span-columns(12);
       margin-top: 10px;
 
+			&:first-child {
+				@include media($medium) {
+					@include span-columns(3);
+					@include shift(3);
+				}	
+			}
+			@include media($medium) {
+				@include span-columns(3);
+			}
+       
+
       &:hover {
 
         $background-cta: rgba($dark, .7);
@@ -938,16 +951,23 @@ Services
 
 	.customer-review {
 		@include outer-container(100%);
-		vertical-align: middle;
-		background: blue;
-		border: 2px solid red;
+		
+
+		height: 250px;
+		hr {
+			
+			@include span-columns(12);
+			@include omega();
+			display: none;
+
+		}
 	}
 
 	.customer-image {
 		//border: 2px solid red;
 		@include span-columns(12);
 		text-align: center;
-		margin: auto;
+		margin: 0;
 
 		@include media($medium) {
 			@include span-columns(3);
@@ -955,7 +975,7 @@ Services
 
 	}
 	.customer-quote {
-		background: lighten(grey, 15%);
+		color: black;
 		@include span-columns(12);
 		margin: 0;
 
@@ -979,6 +999,7 @@ Contact
 .contact {
 	
 	@include outer-container(100%);
+	max-width: 1280px;
 	.contact-form {
 		
 		@include span-columns(12);
@@ -1026,19 +1047,37 @@ Contact
 		.social {
 			margin: 0;
 			padding: 0;
+
+			.follow-us {
+				li {
+					display: inline-block;
+					padding: 5px;
+				}
+			}
+		}
+
+		.expand {
+			>span {
+				display: none;
+			}
 		}
 		a {
 			text-decoration: none;
 			color: $dark;
+			
+
+
 			&:hover {
 				color: darken($dark, 15%);
 			}
 		}
 		
-		.vcard {
-			background: blue;
+		.vcard {	
 			line-height: 1em;
 			font-size: .95em;
+			&:hover {
+				background: lightgrey;
+			}
 		}
 		
 		hr {
@@ -1080,15 +1119,38 @@ Footer
 	
 	.footer-copy {
 		@include span-columns(12);
+
+		@include media($medium) {
+			@include span-columns(6);
+			@include omega();
+		}
 		
 		@include media($large) {
 			@include span-columns(3);
 		}
 	}
+
+	.footer-links {
+		margin: 0;
+		padding: 0;
+	}
 	
 	.footer-list {
-		@include span-columns(6);
-		
+		@include span-columns(12);
+		text-align: center;
+		margin: 0;
+		ul {
+			margin: 0;
+		}
+		h4 {
+		//	margin: 0;
+		}
+
+		@include media($medium) {
+			@include span-columns(6);
+			
+			@include omega();
+		}
 		@include media($large) {
 			@include span-columns(3);
 			@include omega();

@@ -335,6 +335,23 @@ Featured img / call to action
       margin-top: 10px; }
       .cta .cta-btn .btn:last-child {
         margin-right: 0; }
+      @media screen and (min-width: 667px) {
+        .cta .cta-btn .btn:first-child {
+          float: left;
+          display: block;
+          margin-right: 2.3576515979%;
+          width: 23.2317613015%;
+          margin-left: 25.5894128995%; }
+          .cta .cta-btn .btn:first-child:last-child {
+            margin-right: 0; } }
+      @media screen and (min-width: 667px) {
+        .cta .cta-btn .btn {
+          float: left;
+          display: block;
+          margin-right: 2.3576515979%;
+          width: 23.2317613015%; }
+          .cta .cta-btn .btn:last-child {
+            margin-right: 0; } }
       .cta .cta-btn .btn:hover {
         background: rgba(30, 30, 30, 0.7); }
   .cta blockquote, .cta cite {
@@ -711,20 +728,27 @@ Services
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    vertical-align: middle;
-    background: blue;
-    border: 2px solid red; }
+    height: 250px; }
     .happy-customers .customer-review::after {
       clear: both;
       content: "";
       display: table; }
+    .happy-customers .customer-review hr {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 100%;
+      margin-right: 0;
+      display: none; }
+      .happy-customers .customer-review hr:last-child {
+        margin-right: 0; }
   .happy-customers .customer-image {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
     width: 100%;
     text-align: center;
-    margin: auto; }
+    margin: 0; }
     .happy-customers .customer-image:last-child {
       margin-right: 0; }
     @media screen and (min-width: 667px) {
@@ -736,7 +760,7 @@ Services
         .happy-customers .customer-image:last-child {
           margin-right: 0; } }
   .happy-customers .customer-quote {
-    background: #a6a6a6;
+    color: black;
     float: left;
     display: block;
     margin-right: 2.3576515979%;
@@ -761,7 +785,8 @@ Contact
 .contact {
   max-width: 100%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  max-width: 1280px; }
   .contact::after {
     clear: both;
     content: "";
@@ -826,15 +851,21 @@ Contact
     .contact .contact-list .social {
       margin: 0;
       padding: 0; }
+      .contact .contact-list .social .follow-us li {
+        display: inline-block;
+        padding: 5px; }
+    .contact .contact-list .expand > span {
+      display: none; }
     .contact .contact-list a {
       text-decoration: none;
       color: #444; }
       .contact .contact-list a:hover {
         color: #1e1e1e; }
     .contact .contact-list .vcard {
-      background: blue;
       line-height: 1em;
       font-size: .95em; }
+      .contact .contact-list .vcard:hover {
+        background: lightgrey; }
     .contact .contact-list hr {
       color: rgba(68, 68, 68, 0.7); }
     @media screen and (min-width: 667px) {
@@ -872,6 +903,15 @@ Footer
     width: 100%; }
     .footer .footer-copy:last-child {
       margin-right: 0; }
+    @media screen and (min-width: 667px) {
+      .footer .footer-copy {
+        float: left;
+        display: block;
+        margin-right: 2.3576515979%;
+        width: 48.821174201%;
+        margin-right: 0; }
+        .footer .footer-copy:last-child {
+          margin-right: 0; } }
     @media screen and (min-width: 1104px) {
       .footer .footer-copy {
         float: left;
@@ -880,13 +920,29 @@ Footer
         width: 23.2317613015%; }
         .footer .footer-copy:last-child {
           margin-right: 0; } }
+  .footer .footer-links {
+    margin: 0;
+    padding: 0; }
   .footer .footer-list {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
-    width: 48.821174201%; }
+    width: 100%;
+    text-align: center;
+    margin: 0; }
     .footer .footer-list:last-child {
       margin-right: 0; }
+    .footer .footer-list ul {
+      margin: 0; }
+    @media screen and (min-width: 667px) {
+      .footer .footer-list {
+        float: left;
+        display: block;
+        margin-right: 2.3576515979%;
+        width: 48.821174201%;
+        margin-right: 0; }
+        .footer .footer-list:last-child {
+          margin-right: 0; } }
     @media screen and (min-width: 1104px) {
       .footer .footer-list {
         float: left;

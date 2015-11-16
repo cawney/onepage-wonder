@@ -4375,7 +4375,7 @@
 		"outputAbbreviatedPath": "\/img\/building.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 1
+		"processed": 0
 		},
 	"\/img\/journal.jpg": {
 		"fileType": 16384,
